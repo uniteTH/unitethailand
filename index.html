@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>โครงสร้างองค์กร Unite Thailand</title>
+  <title>โครงสร้างองค์กร</title>
   <style>
     * {
       box-sizing: border-box;
@@ -12,132 +12,163 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f7fb;
-      color: #1f2937;
-      line-height: 1.6;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+      background: linear-gradient(to bottom, #fff7fa, #f7f7f7);
+      color: #444;
     }
 
     header {
-      background: linear-gradient(135deg, #0f4c81, #2563eb);
-      color: white;
+      background: linear-gradient(135deg, #f8c8d8, #f4dbe4, #ffffff);
       text-align: center;
-      padding: 50px 20px;
+      padding: 50px 20px 35px;
+      border-bottom: 1px solid #f1d6df;
+    }
+
+    .logo {
+      width: 110px;
+      height: 110px;
+      object-fit: contain;
+      background: #ffffff;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      margin-bottom: 18px;
     }
 
     header h1 {
-      font-size: 36px;
+      font-size: 34px;
+      color: #b76e8a;
       margin-bottom: 10px;
     }
 
     header p {
-      font-size: 18px;
-      opacity: 0.95;
+      font-size: 17px;
+      color: #666;
+      max-width: 750px;
+      margin: 0 auto;
+      line-height: 1.7;
     }
 
     .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 40px 20px;
+      max-width: 1250px;
+      margin: 0 auto;
+      padding: 40px 20px 60px;
     }
 
     .section-title {
       text-align: center;
       font-size: 28px;
-      margin-bottom: 30px;
-      color: #0f4c81;
+      color: #c07a96;
+      margin-bottom: 28px;
+      margin-top: 10px;
     }
 
-    .level {
+    .org-level {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 42px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
     }
 
     .person-card {
-      display: inline-block;
-      background: white;
-      width: 220px;
-      margin: 12px;
-      border-radius: 18px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      background: #ffffff;
+      border-radius: 22px;
       overflow: hidden;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      vertical-align: top;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.08);
+      transition: 0.25s ease;
+      border: 1px solid #f2e3e9;
     }
 
     .person-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+      transform: translateY(-6px);
+      box-shadow: 0 14px 32px rgba(0,0,0,0.12);
     }
 
     .person-card img {
       width: 100%;
-      height: 220px;
+      height: 270px;
       object-fit: cover;
-      background: #dbeafe;
+      background: #f3f3f3;
     }
 
     .person-info {
-      padding: 16px;
+      padding: 20px 18px 24px;
+      text-align: center;
     }
 
-    .person-info h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-      color: #111827;
-    }
-
-    .position {
-      color: #2563eb;
-      font-weight: bold;
+    .person-name {
+      font-size: 22px;
+      color: #555;
+      font-weight: 700;
       margin-bottom: 8px;
     }
 
-    .desc {
+    .person-position {
+      display: inline-block;
+      background: #fde7ef;
+      color: #b76e8a;
+      padding: 8px 14px;
+      border-radius: 999px;
       font-size: 14px;
-      color: #6b7280;
+      font-weight: 600;
+      margin-bottom: 14px;
     }
 
-    .departments {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
-      margin-top: 20px;
+    .person-desc {
+      font-size: 15px;
+      color: #6b6b6b;
+      line-height: 1.7;
     }
 
     .department-box {
-      background: white;
-      border-radius: 18px;
+      background: #ffffff;
+      border-radius: 20px;
       padding: 24px;
       box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+      border: 1px solid #f0e4e8;
       text-align: center;
     }
 
     .department-box h3 {
-      color: #0f4c81;
-      margin-bottom: 12px;
+      color: #c07a96;
+      margin-bottom: 10px;
+      font-size: 22px;
+    }
+
+    .department-box p {
+      color: #666;
+      line-height: 1.7;
+      font-size: 15px;
     }
 
     footer {
       text-align: center;
-      background: #0f172a;
-      color: white;
-      padding: 20px;
-      margin-top: 40px;
+      padding: 22px;
+      background: #f7e8ee;
+      color: #777;
+      font-size: 14px;
+      border-top: 1px solid #eed6df;
     }
 
-    @media (max-width: 600px) {
+    @media (max-width: 768px) {
       header h1 {
         font-size: 28px;
+      }
+
+      header p {
+        font-size: 15px;
       }
 
       .section-title {
         font-size: 24px;
       }
 
-      .person-card {
-        width: 100%;
-        max-width: 320px;
+      .person-card img {
+        height: 230px;
       }
     }
   </style>
@@ -145,71 +176,137 @@
 <body>
 
   <header>
-    <h1>Unite Thailand</h1>
-    <p>เว็บไซต์แสดงโครงสร้างองค์กร</p>
+    <img class="logo" src="https://via.placeholder.com/200x200.png?text=LOGO" alt="โลโก้องค์กร">
+    <h1>โครงสร้างองค์กร Unite Thailand</h1>
+    <p>
+      เว็บไซต์แสดงโครงสร้างองค์กร ข้อมูลบุคลากร และรายละเอียดตำแหน่งงาน
+      ในรูปแบบที่ดูสะอาด สบายตา และทันสมัย
+    </p>
   </header>
 
-  <div class="container">
-    <h2 class="section-title">ผู้บริหาร</h2>
+  <main class="container">
 
-    <div class="level">
-      <div class="person-card">
-        <img src="https://via.placeholder.com/400x400?text=Director" alt="Director">
-        <div class="person-info">
-          <h3>ชื่อ - นามสกุล</h3>
-          <div class="position">ผู้อำนวยการ</div>
-          <div class="desc">ดูแลภาพรวมขององค์กรและกำหนดทิศทางการดำเนินงาน</div>
+    <h2 class="section-title">ผู้บริหารระดับสูง</h2>
+    <div class="org-level">
+      <div class="card-grid" style="max-width: 320px; margin: 0 auto;">
+        <div class="person-card">
+          <img src="https://via.placeholder.com/500x500.png?text=Director" alt="ผู้อำนวยการ">
+          <div class="person-info">
+            <div class="person-name">ชื่อ - นามสกุล</div>
+            <div class="person-position">ผู้อำนวยการ</div>
+            <div class="person-desc">
+              รับผิดชอบกำกับดูแลภาพรวมขององค์กร วางแผนทิศทางการดำเนินงาน
+              และขับเคลื่อนนโยบายให้เป็นไปตามเป้าหมาย
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="level">
-      <div class="person-card">
-        <img src="https://via.placeholder.com/400x400?text=Deputy+1" alt="Deputy 1">
-        <div class="person-info">
-          <h3>ชื่อ - นามสกุล</h3>
-          <div class="position">รองผู้อำนวยการ</div>
-          <div class="desc">กำกับดูแลงานบริหารและประสานงานภายใน</div>
+    <h2 class="section-title">รองผู้อำนวยการ</h2>
+    <div class="org-level">
+      <div class="card-grid">
+        <div class="person-card">
+          <img src="https://via.placeholder.com/500x500.png?text=Deputy+1" alt="รองผู้อำนวยการ 1">
+          <div class="person-info">
+            <div class="person-name">ชื่อ - นามสกุล</div>
+            <div class="person-position">รองผู้อำนวยการฝ่ายบริหาร</div>
+            <div class="person-desc">
+              ดูแลงานด้านบริหารทั่วไป การประสานงานภายในองค์กร
+              และสนับสนุนการดำเนินงานให้มีประสิทธิภาพ
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="person-card">
-        <img src="https://via.placeholder.com/400x400?text=Deputy+2" alt="Deputy 2">
-        <div class="person-info">
-          <h3>ชื่อ - นามสกุล</h3>
-          <div class="position">รองผู้อำนวยการ</div>
-          <div class="desc">สนับสนุนการวางแผนและพัฒนาองค์กร</div>
+        <div class="person-card">
+          <img src="https://via.placeholder.com/500x500.png?text=Deputy+2" alt="รองผู้อำนวยการ 2">
+          <div class="person-info">
+            <div class="person-name">ชื่อ - นามสกุล</div>
+            <div class="person-position">รองผู้อำนวยการฝ่ายพัฒนา</div>
+            <div class="person-desc">
+              ดูแลการวางแผน การพัฒนาโครงการ และยกระดับคุณภาพขององค์กร
+              ให้เติบโตอย่างต่อเนื่อง
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
-    <h2 class="section-title">หน่วยงานภายใน</h2>
+    <h2 class="section-title">หัวหน้าฝ่าย / หน่วยงาน</h2>
+    <div class="card-grid">
+      <div class="person-card">
+        <img src="https://via.placeholder.com/500x500.png?text=Admin" alt="ฝ่ายบริหาร">
+        <div class="person-info">
+          <div class="person-name">ชื่อ - นามสกุล</div>
+          <div class="person-position">หัวหน้าฝ่ายบริหาร</div>
+          <div class="person-desc">
+            ดูแลงานเอกสาร งานบุคคล การนัดหมาย และการประสานงานทั่วไปภายในองค์กร
+          </div>
+        </div>
+      </div>
 
-    <div class="departments">
+      <div class="person-card">
+        <img src="https://via.placeholder.com/500x500.png?text=IT" alt="ฝ่ายไอที">
+        <div class="person-info">
+          <div class="person-name">ชื่อ - นามสกุล</div>
+          <div class="person-position">หัวหน้าฝ่ายเทคโนโลยีสารสนเทศ</div>
+          <div class="person-desc">
+            ดูแลระบบเว็บไซต์ เครือข่าย ฐานข้อมูล และพัฒนาระบบสารสนเทศขององค์กร
+          </div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="https://via.placeholder.com/500x500.png?text=Academic" alt="ฝ่ายวิชาการ">
+        <div class="person-info">
+          <div class="person-name">ชื่อ - นามสกุล</div>
+          <div class="person-position">หัวหน้าฝ่ายวิชาการ</div>
+          <div class="person-desc">
+            รับผิดชอบการจัดกิจกรรมด้านวิชาการ การอบรม และการส่งเสริมการเรียนรู้
+          </div>
+        </div>
+      </div>
+
+      <div class="person-card">
+        <img src="https://via.placeholder.com/500x500.png?text=Support" alt="ฝ่ายสนับสนุน">
+        <div class="person-info">
+          <div class="person-name">ชื่อ - นามสกุล</div>
+          <div class="person-position">หัวหน้าฝ่ายสนับสนุน</div>
+          <div class="person-desc">
+            ดูแลงานบริการ อุปกรณ์ สถานที่ และการอำนวยความสะดวกต่าง ๆ
+            ให้พร้อมต่อการใช้งาน
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="section-title" style="margin-top: 50px;">คำอธิบายหน่วยงาน</h2>
+    <div class="card-grid">
       <div class="department-box">
         <h3>ฝ่ายบริหาร</h3>
-        <p>รับผิดชอบงานเอกสาร งานบุคคล และการประสานงานทั่วไป</p>
+        <p>รับผิดชอบงานเอกสาร ธุรการ งานบุคคล และการประสานงานภายในหน่วยงาน</p>
       </div>
 
       <div class="department-box">
         <h3>ฝ่ายเทคโนโลยีสารสนเทศ</h3>
-        <p>ดูแลระบบเครือข่าย เว็บไซต์ ฐานข้อมูล และงานพัฒนาระบบ</p>
+        <p>ดูแลระบบคอมพิวเตอร์ เว็บไซต์ ระบบฐานข้อมูล และการสนับสนุนด้านเทคนิค</p>
       </div>
 
       <div class="department-box">
         <h3>ฝ่ายวิชาการ</h3>
-        <p>สนับสนุนงานวิชาการ การฝึกอบรม และการพัฒนาความรู้</p>
+        <p>ส่งเสริมการเรียนรู้ การจัดอบรม การพัฒนาหลักสูตร และกิจกรรมทางวิชาการ</p>
       </div>
 
       <div class="department-box">
         <h3>ฝ่ายสนับสนุน</h3>
-        <p>ดูแลงานบริการ อุปกรณ์ และการอำนวยความสะดวกต่าง ๆ</p>
+        <p>สนับสนุนการดำเนินงานด้านสถานที่ อุปกรณ์ และบริการที่เกี่ยวข้องกับองค์กร</p>
       </div>
     </div>
-  </div>
+
+  </main>
 
   <footer>
-    © 2026 Unite Thailand. All Rights Reserved.
+    © 2026 Unite Thailand | Organizational Structure Website
   </footer>
 
 </body>
